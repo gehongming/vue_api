@@ -23,7 +23,7 @@
                     </span>
                     <el-dropdown-menu slot="dropdown">
 
-                        <el-dropdown-item divided  command="logout">退出登录</el-dropdown-item>
+                        <el-dropdown-item divided  command="logout" >退出登录</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
             </div>
@@ -32,19 +32,26 @@
 </template>
 <script>
     import bus from '../common/bus';
+    import { logout } from "../../api/api";
+
     export default {
         data() {
             return {
                 collapse: false,
                 fullscreen: false,
-                name: '小优优',
+                name: '小明',
                 // message: 2
+                id: '1'
             }
         },
         computed:{
             username(){
                 let username = sessionStorage.getItem('username') || localStorage.getItem('username');
                 return username ? username : this.name;
+            },
+            userid(){
+                let userid = sessionStorage.getItem('user_id') || localStorage.getItem('user_id');
+                return userid ? userid : this.id;
             }
         },
         methods:{
@@ -53,6 +60,7 @@
                 if(command == 'logout'){
                     sessionStorage.clear();
                     localStorage.clear();
+                    logout(this.userid())
                     this.$router.push('/login');
                 }
             },

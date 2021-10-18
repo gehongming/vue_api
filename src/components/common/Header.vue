@@ -60,7 +60,7 @@
                 if(command == 'logout'){
                     sessionStorage.clear();
                     localStorage.clear();
-                    logout(this.userid())
+                    logout(this.id)
                     this.$router.push('/login');
                 }
             },

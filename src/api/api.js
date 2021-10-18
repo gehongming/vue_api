@@ -11,6 +11,9 @@ export const login = params => { return axios.post(`${host}/user/login/`, params
 // 注册
 export const register = params => { return axios.post(`${host}/user/register/`, params) };
 
+// 退出-1018
+export const logout = id => { return axios.put(`${host}/user/logout/` + id +'/') };
+
 // 判断用户名是否注册
 export const check_username = username => { return axios.get(`${host}/user/` + username + '/count/') };
 

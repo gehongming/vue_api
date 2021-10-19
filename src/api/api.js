@@ -80,6 +80,11 @@ export const get_detail_testsuite = id => { return axios.get(`${host}/testsuits/
 // 修改套件
 export const update_testsuite = (id, params) => { return axios.put(`${host}/testsuits/` + id + '/', params) };
 
+// // 获取套件下使用的测试接口
+// export const use_testsuite = (id) => { return axios.get(`${host}/testsuits/` + id + '/interfaces/') };
+//
+// // 修改套件没有使用的测试接口
+// export const no_testsuite = (id) => { return axios.get(`${host}/testsuits/` + id + '/interfaces_no/') };
 
 // 通过套件来运行用例
 export const run_by_testsuite = (testsuite_id, env_id) => { return axios.post(`${host}/testsuits/` + testsuite_id + '/run/', {'env_id': env_id}) };

@@ -447,7 +447,7 @@
                     <el-button type="primary" @click="onSubmit()">提交</el-button>
                 </el-col>
                 <el-col :span="2">
-                    <el-button @click="resetForm('form')">取消</el-button>
+                    <el-button @click="resetForm('form')">重置</el-button>
                 </el-col>
             </el-row>
         </div>
